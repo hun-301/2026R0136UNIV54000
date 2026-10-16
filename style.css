@@ -1,0 +1,35 @@
+* { box-sizing: border-box; }
+body { margin: 0; padding: 28px 16px; background: #faf6ed; color: #594f46; font-family: system-ui, sans-serif; }
+main { width: 100%; max-width: 440px; margin: 0 auto; }
+header { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+h1 { margin: 0 auto 0 0; font-size: 56px; letter-spacing: -3px; }
+.score-box { background: #e7ddcf; border-radius: 8px; padding: 8px 16px; text-align: center; font-size: 13px; }
+.score-box strong { display: block; font-size: 24px; }
+button { border: 0; border-radius: 8px; padding: 12px 16px; background: #796653; color: #fffaf2; font: inherit; font-weight: 700; cursor: pointer; }
+button:focus-visible { outline: 3px solid #276381; outline-offset: 3px; }
+button:disabled { opacity: .5; cursor: default; }
+.intro, .help { font-size: 14px; line-height: 1.7; }
+.intro { margin: 16px 0; }
+.board-wrap { position: relative; }
+#board { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; padding: 10px; border-radius: 12px; background: #a89988; }
+.tile { display: flex; align-items: center; justify-content: center; aspect-ratio: 1; min-width: 0; border-radius: 6px; background: #c8bbae; font-size: clamp(18px, 7vw, 36px); font-weight: 800; }
+.tile[data-value="2"] { background: #eee4d6; }
+.tile[data-value="4"] { background: #e9d7b5; }
+.tile[data-value="8"] { background: #f1ae71; color: #482f20; }
+.tile[data-value="16"] { background: #ed925d; color: #442719; }
+.tile[data-value="32"] { background: #e66e51; color: #331b15; }
+.tile[data-value="64"] { background: #c64836; color: #fff; }
+.tile[data-value="128"] { background: #ecd36f; color: #493b13; }
+.tile[data-value="256"] { background: #d9b745; color: #3d300c; }
+.tile[data-value="512"] { background: #b99625; color: #211b07; }
+.tile[data-value="1024"] { background: #80651d; color: #fff; }
+.tile[data-value="2048"] { background: #65501a; color: #fff; }
+.tile.large { font-size: clamp(14px, 5vw, 27px); }
+.tile.higher { background: #493e35; color: #fff; font-size: clamp(12px, 4vw, 23px); overflow-wrap: anywhere; }
+.controls { display: flex; gap: 10px; margin-top: 16px; }
+.controls button { flex: 1; padding: 12px 0; font-size: 25px; }
+.notice { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; border-radius: 12px; background: rgba(250, 246, 237, .96); text-align: center; padding: 12px; }
+.notice[hidden] { display: none; }
+.notice h2 { margin: 0 0 8px; font-size: clamp(20px, 6vw, 30px); }
+.notice button { max-width: 100%; }
+@media (max-width: 340px) { body { padding: 16px 10px; } #board { gap: 6px; padding: 6px; } header { gap: 8px; } h1 { font-size: 44px; } }
